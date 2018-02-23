@@ -2,18 +2,35 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>electron</title>
+    <link href="https://fonts.googleapis.com/css?family=Palanquin+Dark" rel="stylesheet">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
   </head>
-  <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+  <body class="webtraining">
+  <a href="./sound-effects.html">sounds</a>
+  <div class="box">
+    <div class="clockdiv">
+      <span class="minutes" id="minutes"></span>
+      <div class="smalltext">Minutos</div>
+    </div>
+    <div class="clockdiv">
+      <span class="seconds" id="seconds"></span>
+      <div class="smalltext">Segundos</div>
+    </div>
+  </div>
+  <div class="set-time row" id="set-time">
+    <label for="time">Set Timer</label>
+    <input type="number" name="time" id="time">
+    <button id="setTimer"></button>
+  </div>
   </body>
+  <script>window.$ = window.jQuery = require('jquery');</script>
 
   <script>
     // You can also require other files to run in this process
     require('./renderer.js')
   </script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
 </html>

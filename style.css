@@ -1,0 +1,66 @@
+
+.time{
+    font-family: 'Palanquin Dark', sans-serif;
+    font-weight: 200;
+    font-size: 45px;
+    display: inline-table;
+}
+.time > .colon{
+    color: white;
+}
+
+.webtraining{
+    background-image: url("assets/webtraining.png");
+    overflow: hidden;
+    background-size: 800px ;
+}
+
+.box{
+    font-family: 'Palanquin Dark', sans-serif;
+    color: #fff;
+    display: inline-block;
+    font-weight: 100;
+    text-align: center;
+    font-size: 30px;
+    position: absolute;
+    top:60%;
+    left: 40%;
+}
+
+.box .clockdiv{
+    padding: 10px;
+    border-radius: 3px;
+    background: #f16B2f;
+    display: inline-block;
+}
+
+.box .clockdiv > span{
+    padding: 15px;
+    border-radius: 3px;
+    background: #105977;
+    display: inline-block;
+    width: 65px;
+    height: 65px;
+}
+
+.smalltext{
+    padding-top: 5px;
+    font-size: 16px;
+}
+
+.mailResult{
+    font-family: 'Palanquin Dark', sans-serif;
+    color: #fff;
+    display: inline-block;
+    font-weight: 100;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 30%;
+}
+.result{
+    padding-bottom: 20px;
+}
+.winner{
+    border: solid 1px greenyellow;
+    padding: 5px;
+}

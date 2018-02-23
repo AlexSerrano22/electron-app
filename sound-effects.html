@@ -1,0 +1,27 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>electron</title>
+    <link href="https://fonts.googleapis.com/css?family=Palanquin+Dark" rel="stylesheet">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a href="./index.html">sounds</a>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="col-sm-2">
+            <audio id="drum_roll_player" src="assets/Drum-Roll.mp3" preload="auto"></audio>
+            <button id="drum_roll" class="btn btn-primary">Play</button>
+        </div>
+    </div>
+</div>
+</body>
+<script>window.$ = window.jQuery = require('jquery');</script>
+
+<script>
+    // You can also require other files to run in this process
+    require('./renderer.js')
+</script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</html>
