@@ -27,7 +27,6 @@ if (!!playerButton)
 function startTimer(duration, displayMinutes, displaySeconds) {
     var timer = duration, minutes, seconds;
     var interval = setInterval(function () {
-        console.log(1);
         if (timer >= 0) {
             minutes = parseInt(timer / 60, 10);
             seconds = parseInt(timer % 60, 10);
