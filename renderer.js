@@ -26,6 +26,8 @@ if (!!playerButton)
 
 function startTimer(duration, displayMinutes, displaySeconds) {
     var timer = duration, minutes, seconds;
+    var sound = createAudio(nextSong(0), 0);
+
     var interval = setInterval(function () {
         if (timer >= 0) {
             minutes = parseInt(timer / 60, 10);
@@ -38,7 +40,8 @@ function startTimer(duration, displayMinutes, displaySeconds) {
             displaySeconds.textContent = seconds;
 
             if (--timer < 0) {
-                timer = 0;
+                timer = -1;
+                sound.pause();
             }
         } else {
             clearInterval(interval);
@@ -54,4 +57,29 @@ function playSound(player, playing) {
         player.pause();
         return false;
     }
+}
+
+
+function createAudio(src, i) {
+    var sound = document.createElement('audio');
+    sound.id = 'audio-player';
+    sound.src = src;
+    sound.type = 'audio/mpeg';
+    sound.preload = "auto";
+    sound.autoplay = true;
+    document.getElementById('box').appendChild(sound);
+
+    sound.addEventListener('ended', function () {
+        i = i + 1;
+        console.log(i);
+        sound.src = nextSong(i);
+        sound.play();
+    });
+
+    return sound;
+}
+
+function nextSong(i) {
+    var songsSource = ["./assets/Drum-Roll.mp3", "./assets/ES_Bricks_3.mp3", "./assets/ES_Tough_Guy_1.mp3", "./assets/ES_I_Met.mp3", "./assets/ES_ExperiMental_5.mp3"];
+    return songsSource[i];
 }
