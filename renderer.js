@@ -11,6 +11,13 @@ const player = document.getElementById('drum_roll_player');
 const playerButton = document.getElementById('drum_roll');
 var playing = false;
 
+if (!!time)
+    time.addEventListener("keypress", function (e) {
+        if (e.keyCode === 13) {
+            const countdown = time.value * 60;
+            startTimer(countdown, minutes, seconds);
+        }
+    });
 
 if (!!setTimerButton)
     setTimerButton.addEventListener('click', function (event) {
@@ -80,6 +87,6 @@ function createAudio(src, i) {
 }
 
 function nextSong(i) {
-    var songsSource = ["./assets/Drum-Roll.mp3", "./assets/ES_Bricks_3.mp3", "./assets/ES_Tough_Guy_1.mp3", "./assets/ES_I_Met.mp3", "./assets/ES_ExperiMental_5.mp3"];
+    var songsSource = [ "./assets/ES_Bricks_3.mp3", "./assets/ES_Tough_Guy_1.mp3", "./assets/ES_I_Met.mp3", "./assets/ES_ExperiMental_5.mp3"];
     return songsSource[i];
 }

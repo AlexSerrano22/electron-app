@@ -47,6 +47,10 @@
     padding-top: 5px;
     font-size: 16px;
 }
+.set-time{
+    position: relative;
+    z-index: 3;
+}
 
 .mailResult{
     font-family: 'Palanquin Dark', sans-serif;
@@ -63,4 +67,12 @@
 .winner{
     border: solid 1px greenyellow;
     padding: 5px;
+}
+
+#myVideo{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
 }
