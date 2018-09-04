@@ -9,6 +9,8 @@ const minutes = document.getElementById('minutes');
 
 const player = document.getElementById('drum_roll_player');
 const playerButton = document.getElementById('drum_roll');
+const music_urls = document.getElementById('music-urls');
+
 var playing = false;
 
 if (!!time)
@@ -87,6 +89,7 @@ function createAudio(src, i) {
 }
 
 function nextSong(i) {
-    var songsSource = [ "./assets/ES_Bricks_3.mp3", "./assets/ES_Tough_Guy_1.mp3", "./assets/ES_I_Met.mp3", "./assets/ES_ExperiMental_5.mp3"];
+    var songsSource = music_urls.value.trim().split(",");
+    debugger
     return songsSource[i];
 }

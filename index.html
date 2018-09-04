@@ -1,36 +1,70 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="UTF-8">
     <title>electron</title>
     <link href="https://fonts.googleapis.com/css?family=Palanquin+Dark" rel="stylesheet">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
-  </head>
-  <body class="webtraining">
-  <a href="./sound-effects.html">sounds</a>
-  <div class="box" id="box">
-    <div class="clockdiv">
-      <span class="minutes" id="minutes"></span>
-      <div class="smalltext">Minutos</div>
-    </div>
-    <div class="clockdiv">
-      <span class="seconds" id="seconds"></span>
-      <div class="smalltext">Segundos</div>
-    </div>
-  </div>
-  <div class="set-time row" id="set-time">
-    <label for="time">Set Timer</label>
-    <input type="number" name="time" id="time">
-    <button id="setTimer"></button>
-  </div>
-  </body>
-  <script>window.$ = window.jQuery = require('jquery');</script>
+</head>
+<body class="webtraining">
+<div class="webtraining__options-menu">
+    <ul class="list-inline">
+        <li class="webtraining__option-element">
+            <a href="./sound-effects.html">sounds</a>
+        </li>
+        <li class="webtraining__option-element">
+            <div class="set-time row" id="set-time">
+                <label for="time">Set Timer</label>
+                <input type="number" name="time" id="time">
+                <button id="setTimer">Play</button>
+            </div>
+        </li>
+        <li class="webtraining__option-element">
+            <button class="toogle-music-modal" data-toggle="modal" data-target="#myModal">Add Music</button>
+        </li>
+    </ul>
 
-  <script>
+</div>
+
+<div class="box" id="box">
+    <div class="clockdiv">
+        <span class="minutes" id="minutes"></span>
+        <div class="smalltext">Minutos</div>
+    </div>
+    <div class="clockdiv">
+        <span class="seconds" id="seconds"></span>
+        <div class="smalltext">Segundos</div>
+    </div>
+</div>
+
+<!--START MODAL-->
+<div class="modal fade" id="myModal" aria-labelledby="myModalLabel" aria-hidden="true" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">ADD URL</h4>
+            </div>
+            <div class="modal-body">
+                <p>Please insert the URLs separated by commas</p>
+                <textarea name="music-urls" id="music-urls" class="urls-area" rows="10">./assets/ES_Bricks_3.mp3,./assets/ES_Tough_Guy_1.mp3,./assets/ES_I_Met.mp3,./assets/ES_ExperiMental_5.mp3</textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--END MODAL-->
+
+</body>
+<script>window.$ = window.jQuery = require('jquery');</script>
+
+<script>
     // You can also require other files to run in this process
     require('./renderer.js')
-  </script>
-  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
 </html>
